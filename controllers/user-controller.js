@@ -12,6 +12,7 @@ const userController = {
   getSingleUser: (params, res) => {
     User.findOne({ _id: params.id })
       .then((dbUserData) => {
+        console.log(params.id);
         if (!dbUserData) {
           res.status(404).json({ message: "No user found with this id!" });
           return;
